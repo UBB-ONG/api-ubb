@@ -15,6 +15,8 @@ class UpdateCompanyUseCase {
     private companiesRepository: ICompanyRepository
   ) {}
   async execute(id: string, { avatar_url }: ICompanyRequest): Promise<void> {
+    const companyExists = await this.companiesRepository.findById(id);
+    if (!companyExists) throw new AppError('Empresa não cadastrada', 404);
     if (!avatar_url) throw new AppError('Photo incorrect!');
     await validator.validUrl(avatar_url);
     await this.companiesRepository.update(id, {
