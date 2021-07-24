@@ -1,4 +1,4 @@
-import { isEmail, isURL, maxLength, minLength } from 'class-validator';
+import { isURL, maxLength, minLength } from 'class-validator';
 
 import { AppError } from '@shared/errors/AppError';
 
@@ -14,10 +14,6 @@ class Validator {
   async validUrl(data: string): Promise<void> {
     const urlValid = await isURL(data);
     if (!urlValid) throw new AppError('invalid URL');
-  }
-  async validEmail(data: string): Promise<void> {
-    const urlValid = await isEmail(data);
-    if (!urlValid) throw new AppError('invalid Email');
   }
 }
 
