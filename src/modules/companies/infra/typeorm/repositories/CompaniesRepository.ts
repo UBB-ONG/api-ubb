@@ -21,12 +21,9 @@ class CompaniesRepository implements ICompanyRepository {
     return result;
   }
 
-  async update(
-    id: string,
-    { avatar_url, name }: IUpdateCompanyDTO
-  ): Promise<void> {
+  async update(id: string, { avatar_url }: IUpdateCompanyDTO): Promise<void> {
     const company = await this.repository.findOne({ id });
-    await this.repository.update(company, { avatar_url, name });
+    await this.repository.update(company, { avatar_url });
   }
 
   async list(): Promise<Company[]> {
