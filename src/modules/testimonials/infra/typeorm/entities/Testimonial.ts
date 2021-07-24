@@ -6,7 +6,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('testimonials')
+@Entity('testimonial')
 class Testimonial {
   @PrimaryGeneratedColumn()
   readonly id: string;
