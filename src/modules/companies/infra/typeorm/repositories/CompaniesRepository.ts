@@ -34,7 +34,7 @@ class CompaniesRepository implements ICompanyRepository {
     return all;
   }
 
-  async delete(id: number): Promise<void> {
+  async delete(id: string): Promise<void> {
     const company = await this.repository.findOne({ id });
     await this.repository.remove(company);
   }

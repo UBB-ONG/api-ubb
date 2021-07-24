@@ -6,7 +6,7 @@ interface ICompanyRepository {
   create(data: ICreateCompanyDTO): Promise<Company>;
   update(id: string, data: IUpdateCompanyDTO): Promise<void>;
   list(): Promise<Company[]>;
-  delete(id: number): Promise<void>;
+  delete(id: string): Promise<void>;
 }
 
 export { ICompanyRepository };

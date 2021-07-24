@@ -13,7 +13,6 @@ class CreateCompanyController {
     const { avatar_url, name }: ICompanyRequest = request.body;
 
     const createCompanyUseCase = container.resolve(CreateCompanyUseCase);
-
     const newCompany = await createCompanyUseCase.execute({
       avatar_url,
       name,

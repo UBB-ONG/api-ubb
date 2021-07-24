@@ -8,8 +8,9 @@ export class Company1627143231505 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'id',
+            type: 'int',
             isPrimary: true,
+            isGenerated: true,
           },
           {
             name: 'avatar_url',
