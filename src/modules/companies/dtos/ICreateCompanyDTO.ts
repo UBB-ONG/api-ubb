@@ -1,6 +1,5 @@
-
-interface CreateCompanyDTO {
+interface ICreateCompanyDTO {
   avatar_url: string;
   name: string;
 }
-export { CreateCompanyDTO }; 
+export { ICreateCompanyDTO };

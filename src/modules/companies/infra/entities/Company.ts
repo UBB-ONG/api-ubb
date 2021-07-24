@@ -1,28 +1,27 @@
 import {
-	Column,
-	CreateDateColumn,
-	Entity,
-	PrimaryColumn,
-	UpdateDateColumn,
-} from "typeorm";
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
-@Entity("companies")
+@Entity('companies')
 class Company {
-	@PrimaryColumn()
-	readonly id: string;
+  @PrimaryColumn()
+  readonly id: string;
 
-	@Column()
-	avatar_url: string;
+  @Column()
+  avatar_url: string;
 
-	@Column()
-	name: string;
+  @Column()
+  name: string;
 
-	@CreateDateColumn()
-	created_at: Date;
+  @CreateDateColumn()
+  created_at: Date;
 
-	@UpdateDateColumn()
-	updated_at: Date;
-
+  @UpdateDateColumn()
+  updated_at: Date;
 }
 
 export { Company };

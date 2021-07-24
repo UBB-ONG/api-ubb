@@ -1,5 +1,5 @@
-interface UpdateCompanyDTO {
-	avatar_url?: string;
-	name?: string;
+interface IUpdateCompanyDTO {
+  avatar_url?: string;
+  name?: string;
 }
-export { UpdateCompanyDTO  }; 
+export { IUpdateCompanyDTO };
