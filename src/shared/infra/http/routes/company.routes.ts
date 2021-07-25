@@ -12,7 +12,19 @@ const updateCompanyController = new UpdateCompanyController();
 const listCompanyController = new ListCompanyController();
 const deleteCompanyController = new DeleteCompanyController();
 companyRouter.post('/company', createCompanyController.handle);
-companyRouter.put('/company/:id', updateCompanyController.handle);
-companyRouter.get('/company', listCompanyController.handle);
-companyRouter.delete('/company/:id', deleteCompanyController.handle);
+companyRouter.put(
+  '/company/:id',
+
+  updateCompanyController.handle
+);
+companyRouter.get(
+  '/company',
+
+  listCompanyController.handle
+);
+companyRouter.delete(
+  '/company/:id',
+
+  deleteCompanyController.handle
+);
 export { companyRouter };

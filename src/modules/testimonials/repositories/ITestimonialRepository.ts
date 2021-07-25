@@ -1,5 +1,5 @@
 import { ICreateTestimonialDTO } from '../dtos/ICreateTestimonialDTO';
-import { Testimonial } from '../infra/entities/Testimonial';
+import { Testimonial } from '../infra/typeorm/entities/Testimonial';
 
 interface ITestimonialRepository {
   create(data: ICreateTestimonialDTO): Promise<Testimonial>;

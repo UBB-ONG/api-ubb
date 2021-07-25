@@ -9,10 +9,19 @@ const testimonialRouter = Router();
 const createTestimonialController = new CreateTestimonialController();
 const listTestimonialController = new ListTestimonialController();
 const deleteTestimonialController = new DeleteTestimonialController();
-testimonialRouter.post('/testimonial', createTestimonialController.handle);
-testimonialRouter.get('/testimonial', listTestimonialController.handle);
+testimonialRouter.post(
+  '/testimonial',
+
+  createTestimonialController.handle
+);
+testimonialRouter.get(
+  '/testimonial',
+
+  listTestimonialController.handle
+);
 testimonialRouter.delete(
   '/testimonial/:id',
+
   deleteTestimonialController.handle
 );
 
