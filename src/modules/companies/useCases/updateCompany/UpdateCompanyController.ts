@@ -17,7 +17,7 @@ class UpdateCompanyController {
       avatar_url,
     });
 
-    return response.status(201).json({
+    return response.status(200).json({
       message: 'update success',
     });
   }

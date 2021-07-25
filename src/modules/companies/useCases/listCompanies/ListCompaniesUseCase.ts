@@ -12,7 +12,7 @@ class ListCompanyUseCase {
   ) {}
   async execute(): Promise<Company[]> {
     const companies = await this.companiesRepository.list();
-    if (companies.length <= 0) throw new AppError('No company registered');
+    if (companies.length <= 0) throw new AppError('No company registered', 404);
     return companies;
   }
 }

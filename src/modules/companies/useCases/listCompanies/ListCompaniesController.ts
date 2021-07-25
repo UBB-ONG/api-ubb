@@ -8,7 +8,7 @@ class ListCompanyController {
     const listompanyUseCase = container.resolve(ListCompanyUseCase);
     const companies = await listompanyUseCase.execute();
 
-    return response.status(201).json(companies);
+    return response.status(200).json(companies);
   }
 }
 

@@ -11,7 +11,8 @@ class DeleteCompanyUseCase {
   ) {}
   async execute(id: string): Promise<void> {
     const companyExists = await this.companiesRepository.findById(id);
-    if (!companyExists) throw new AppError('Unregistered company', 404);
+    if (!companyExists)
+      throw new AppError(`Company with id ${id} not found`, 404);
     await this.companiesRepository.delete(id);
   }
 }

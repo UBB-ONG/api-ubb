@@ -10,7 +10,7 @@ class DeleteCompanyController {
     const deleteCompanyUseCase = container.resolve(DeleteCompanyUseCase);
     await deleteCompanyUseCase.execute(id);
 
-    return response.status(201).json({
+    return response.status(200).json({
       message: 'deleted success',
     });
   }
