@@ -353,11 +353,6 @@
         }
       }
     }
-  },
-    "servers": [
-      {
-        "url": "https://ubb-api.herokuapp.com/"
-      }
-    ]
+  }
 
 }
