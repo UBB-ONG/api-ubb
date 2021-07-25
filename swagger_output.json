@@ -48,6 +48,10 @@
                 "relation": {
                   "type": "string",
                   "example": "relation example name"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "description example name"
                 }
               },
               "required": [
@@ -55,7 +59,8 @@
                 "avatar_url",
                 "city",
                 "office",
-                "relation"
+                "relation",
+                "description"
               ]
             }
           }
@@ -285,6 +290,9 @@
           "relation": {
             "type": "string"
           },
+          "description": {
+              "type": "string"
+            },
           "created_at": {
             "type": "date"
           },
@@ -334,6 +342,9 @@
             "type": "string"
           },
           "relation": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "created_at": {

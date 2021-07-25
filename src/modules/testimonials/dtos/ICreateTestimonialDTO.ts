@@ -4,5 +4,6 @@ interface ICreateTestimonialDTO {
   city: string;
   office: string;
   relation: string;
+  description: string;
 }
 export { ICreateTestimonialDTO };

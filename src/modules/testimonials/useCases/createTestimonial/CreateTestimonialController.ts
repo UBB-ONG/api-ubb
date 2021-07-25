@@ -9,12 +9,19 @@ interface ITestimonialRequest {
   city: string;
   office: string;
   relation: string;
+  description: string;
 }
 
 class CreateTestimonialController {
   async handle(request: Request, response: Response) {
-    const { name, avatar_url, city, office, relation }: ITestimonialRequest =
-      request.body;
+    const {
+      name,
+      avatar_url,
+      city,
+      office,
+      relation,
+      description,
+    }: ITestimonialRequest = request.body;
 
     const createTestimonialCompanyUseCase = container.resolve(
       CreateTestimonialCompanyUseCase
@@ -25,6 +32,7 @@ class CreateTestimonialController {
       city,
       office,
       relation,
+      description,
     });
 
     return response.status(201).json(newCompany);

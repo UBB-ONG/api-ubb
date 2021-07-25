@@ -12,6 +12,7 @@ interface ITestimonialRequest {
   city: string;
   office: string;
   relation: string;
+  description: string;
 }
 const validator = new Validator();
 @injectable()
@@ -26,6 +27,7 @@ class CreateTestimonialCompanyUseCase {
     city,
     office,
     relation,
+    description,
   }: ITestimonialRequest): Promise<Testimonial> {
     if (!avatar_url) throw new AppError('Photo incorrect!');
     if (!name) throw new AppError('Name incorrect!');
@@ -37,6 +39,7 @@ class CreateTestimonialCompanyUseCase {
       city,
       office,
       relation,
+      description,
     });
 
     return result;

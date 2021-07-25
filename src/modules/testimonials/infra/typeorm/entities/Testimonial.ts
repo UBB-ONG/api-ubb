@@ -26,6 +26,9 @@ class Testimonial {
   @Column()
   relation: string;
 
+  @Column()
+  description: string;
+
   @CreateDateColumn()
   created_at: Date;
 

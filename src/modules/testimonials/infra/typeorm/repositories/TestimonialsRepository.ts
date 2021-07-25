@@ -18,6 +18,7 @@ class TestimonialsRepository implements ITestimonialRepository {
     city,
     office,
     relation,
+    description,
   }: ICreateTestimonialDTO): Promise<Testimonial> {
     const newTestimonial = this.repository.create({
       name,
@@ -25,6 +26,7 @@ class TestimonialsRepository implements ITestimonialRepository {
       city,
       office,
       relation,
+      description,
     });
 
     const result = await this.repository.save(newTestimonial);
