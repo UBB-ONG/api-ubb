@@ -1,11 +1,11 @@
 {
-  "openapi": "3.0.0",
+  "swagger": "2.0",
   "info": {
     "version": "1.0.0",
     "title": "REST API",
     "description": ""
   },
-  "host": "localhost:3000",
+  "host": "localhost:3333",
   "basePath": "/",
   "tags": [],
   "schemes": [
@@ -35,7 +35,7 @@
                 },
                 "avatar_url": {
                   "type": "string",
-                  "example": "avatar_url.update.com"
+                  "example": "avatar.com"
                 },
                 "city": {
                   "type": "string",
@@ -136,7 +136,7 @@
               "properties": {
                 "avatar_url": {
                   "type": "string",
-                  "example": "avatar_url.com"
+                  "example": "avatar.com"
                 },
                 "name": {
                   "type": "string",
@@ -199,7 +199,7 @@
               "properties": {
                 "avatar_url": {
                   "type": "string",
-                  "example": "avatar_url.update.com"
+                  "example": "avatar.update.com"
                 },
                 "name": {
                   "type": "string",

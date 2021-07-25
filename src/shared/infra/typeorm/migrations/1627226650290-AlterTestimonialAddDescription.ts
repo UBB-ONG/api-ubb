@@ -5,7 +5,7 @@ export class AlterTestimonialAddDescription1627226650290
 {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.addColumn(
-      'testimonials',
+      'testimonial',
       new TableColumn({
         name: 'description',
         type: 'varchar',
@@ -14,6 +14,6 @@ export class AlterTestimonialAddDescription1627226650290
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropColumn('testimonials', 'description');
+    await queryRunner.dropColumn('testimonial', 'description');
   }
 }
