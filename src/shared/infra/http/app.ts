@@ -1,13 +1,14 @@
 import 'reflect-metadata';
 import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
+import swaggerUi from 'swagger-ui-express';
 
 import 'express-async-errors';
 
 import '@shared/container';
-
 import { AppError } from '@shared/errors/AppError';
 
+import swaggerDocument from '../../../../swagger_output.json';
 import { router } from './routes';
 
 const app = express();
@@ -16,6 +17,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use(router);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
