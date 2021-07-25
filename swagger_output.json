@@ -1,0 +1,349 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/testimonial": {
+      "post": {
+        "tags": [
+          "Testimonials"
+        ],
+        "summary": "Create testimonial.",
+        "description": "endpoint used to create a new testimonial.",
+        "parameters": [
+          {
+            "name": "create testimonial object",
+            "in": "body",
+            "description": "create testimonial values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "example update name"
+                },
+                "avatar_url": {
+                  "type": "string",
+                  "example": "avatar_url.update.com"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "city example name"
+                },
+                "office": {
+                  "type": "string",
+                  "example": "office example name"
+                },
+                "relation": {
+                  "type": "string",
+                  "example": "relation example name"
+                }
+              },
+              "required": [
+                "name",
+                "avatar_url",
+                "city",
+                "office",
+                "relation"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Testimonials successfully created.",
+            "schema": {
+              "$ref": "#/components/definitions/Testimonials"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Testimonials"
+        ],
+        "summary": "List all testimonials.",
+        "description": "endpoint used to list all testimonials.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Testimonials successfully obtained.",
+            "schema": {
+              "$ref": "#/components/definitions/Testimonials"
+            }
+          },
+          "404": {
+            "description": "No testimonials registered."
+          }
+        }
+      }
+    },
+    "/testimonial/{id}": {
+      "delete": {
+        "tags": [
+          "Testimonials"
+        ],
+        "summary": "Delete testimonial by id.",
+        "description": "endpoint used to delete testimonial by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "delete success"
+          },
+          "404": {
+            "description": "Testimonial with id ${id} not found"
+          }
+        }
+      }
+    },
+    "/company": {
+      "post": {
+        "tags": [
+          "Companies"
+        ],
+        "summary": "Create a new company.",
+        "description": "endpoint used to register a partner company.",
+        "parameters": [
+          {
+            "name": "post company object",
+            "in": "body",
+            "description": "New company values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "avatar_url": {
+                  "type": "string",
+                  "example": "avatar_url.com"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "example name"
+                }
+              },
+              "required": [
+                "avatar_url",
+                "name"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Companies successfully created.",
+            "schema": {
+              "$ref": "#/components/definitions/Companies"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Companies"
+        ],
+        "summary": "List companies.",
+        "description": "endpoint used to list all companies.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Companies successfully obtained.",
+            "schema": {
+              "$ref": "#/components/definitions/Companies"
+            }
+          }
+        }
+      }
+    },
+    "/company/{id}": {
+      "put": {
+        "tags": [
+          "Companies"
+        ],
+        "summary": "Update a company.",
+        "description": "endpoint used to update a company.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "update company object",
+            "in": "body",
+            "description": "update company values",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "avatar_url": {
+                  "type": "string",
+                  "example": "avatar_url.update.com"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "example update name"
+                }
+              },
+              "required": [
+                "avatar_url",
+                "name"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Companies successfully updated.",
+            "schema": {
+              "$ref": "#/components/definitions/Companies"
+            }
+          },
+          "404": {
+            "description": "Companies with id ${id} not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Companies"
+        ],
+        "summary": "Delete company by id.",
+        "description": "endpoint used to delete company by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "delete success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "definitions": {
+      "Companies": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "avatar_url": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "date"
+          },
+          "updated_at": {
+            "type": "date"
+          }
+        }
+      },
+      "Testimonials": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "avatar_url": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "office": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "date"
+          },
+          "updated_at": {
+            "type": "date"
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Companies": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "avatar_url": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "date"
+          },
+          "updated_at": {
+            "type": "date"
+          }
+        }
+      },
+      "Testimonials": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "avatar_url": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "office": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "date"
+          },
+          "updated_at": {
+            "type": "date"
+          }
+        }
+      }
+    }
+  }
+}
