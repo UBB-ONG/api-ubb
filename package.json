@@ -1,6 +1,6 @@
 {
   "name": "crudusers",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "node dist/shared/infra/http/server.js",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
     "dev": "env NODE_ENV=test ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
-    "test": "env NODE_ENV=test&&jest --runInBand --forceExit --coverage --silent --detectOpenHandles"
+    "test": "env NODE_ENV=test&&jest --runInBand --forceExit --coverage --silent --detectOpenHandles",
+    "release": "standard-version"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -49,6 +50,7 @@
     "eslint-plugin-prettier": "3.4.0",
     "git-commit-msg-linter": "^3.2.6",
     "prettier": "2.3.1",
+    "standard-version": "^9.3.1",
     "ts-node-dev": "1.1.6",
     "tsconfig-paths": "3.9.0",
     "typescript": "^4.3.5"
