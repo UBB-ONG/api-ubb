@@ -29,6 +29,8 @@ class CreateTestimonialCompanyUseCase {
     relation,
     description,
   }: ITestimonialRequest): Promise<Testimonial> {
+    console.log(name);
+    console.log(avatar_url);
     if (!avatar_url) throw new AppError('Photo incorrect!');
     if (!name) throw new AppError('Name incorrect!');
     await validator.validName(name);
