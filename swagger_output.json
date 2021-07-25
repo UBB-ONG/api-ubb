@@ -5,7 +5,7 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "localhost:3333",
+  "host": "https://ubb-api.herokuapp.com",
   "basePath": "/",
   "tags": [],
   "schemes": [
