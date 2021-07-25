@@ -8,9 +8,6 @@
   "host": "http://ubb-api.herokuapp.com",
   "basePath": "/",
   "tags": [],
-  "schemes": [
-    "http"
-  ],
   "consumes": [],
   "produces": [],
   "paths": {
