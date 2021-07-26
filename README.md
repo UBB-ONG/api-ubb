@@ -82,6 +82,7 @@ $ yarn typeorm migration:run ou npm typeorm migration:run
 $ yarn dev ou npm run dev
 ```
 
+Documentação: https://ubb-api.herokuapp.com/api-docs
 
 <!-- LICENSE -->
 
